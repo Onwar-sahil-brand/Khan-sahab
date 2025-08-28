@@ -3,9 +3,9 @@ import time
 import json
 from instagrapi import Client
 
-USERNAME = "ayush"              # ← अपना username
-PASSWORD = "1234"             # ← अपना password
-GROUP_NAME = "JUST CHILL 😎"     # ← अपना group title
+USERNAME = "sahil"              # ← अपना username
+PASSWORD = "812638"             # ← अपना password
+GROUP_NAME = "baba sahab 😎"     # ← अपना group title
 REPLY_TEXT = "🤖 Auto reply from bot!"
 
 SESSION_FILE = "session.json"
@@ -18,7 +18,7 @@ def login():
             with open(SESSION_FILE, "r") as f:
                 settings = json.load(f)
                 cl.set_settings(settings)
-            cl.login(USERNAME, PASSWORD)
+            cl.login(sahil, 812638)
         except Exception as e:
             print("⚠️ Session failed, logging fresh:", e)
             cl.login(USERNAME, PASSWORD)
@@ -26,7 +26,7 @@ def login():
                 json.dump(cl.get_settings(), f)
     else:
         print("🔐 Logging in fresh...")
-        cl.login(USERNAME, PASSWORD)
+        cl.login(sahil, 812638)
         with open(SESSION_FILE, "w") as f:
             json.dump(cl.get_settings(), f)
         print("✅ Session saved!")
@@ -83,4 +83,5 @@ if __name__ == "__main__":
         except Exception as e:
             print("❌ Main error:", e)
             time.sleep(30)
+
             
